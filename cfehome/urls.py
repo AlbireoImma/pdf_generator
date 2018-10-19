@@ -17,10 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from .views import GeneratePDF
-from .views import report
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^pdf/$', GeneratePDF.as_view()),
-    # url(r'^report/$', report),
 ]

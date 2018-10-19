@@ -1,3 +1,21 @@
+<!--
+    Datos Necesarios en el template mediante el diccionario:
+        {key -> value}
+
+        name -> Nombre del cliente
+        rut -> RUT del cliente
+        doc_date -> Fecha del documento
+        num_contrato -> Numero de contrato
+        time_trans -> Hora de la transaccion
+        num_orden -> Numero de la orden
+        name_bank -> Nombre del banco
+        coutas -> lista con las coutas (cada couta como un diccionario donde)
+            couta.fecha_cobro
+            couta.fecha_pago
+            couta.valor
+            couta.codigo
+-->
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" dir="ltr">
     <a href="https://www.masfondos.cl" style="text-align: center">
@@ -14,31 +32,31 @@
     <table style="width:100%">
       <tr>
         <th align="left">Nombre Cliente</th>
-        <th align="left" style="font-weight: normal" colspan="3">: Nombre Nombre Apellido Apellido</th>
+        <th align="left" style="font-weight: normal" colspan="3">: {{ name }}</th>
       </tr>
       <tr>
         <td style="font-weight: bold">RUT Cliente</td>
-        <td colspan="3">: NN.NNN.NNN-X</td>
+        <td colspan="3">: {{ rut }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Fecha Documento</td>
-        <td colspan="3">: dd/mm/aaaa</td>
+        <td colspan="3">: {{ doc_date }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Numero Contrato</td>
-        <td colspan="3">: NNNNN-R</td>
+        <td colspan="3">: {{ num_contrato }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Hora Transacción</td>
-        <td colspan="3">: HH:MM</td>
+        <td colspan="3">: {{ time_trans }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Numero Orden</td>
-        <td colspan="3">: NNNNNNNNNNNNNNNNNNNNNNNN</td>
+        <td colspan="3">: {{ num_orden }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Nombre de Banco</td>
-        <td colspan="3">: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+        <td colspan="3">: {{ name_bank }}</td>
       </tr>
     </table>
     <br>
@@ -60,13 +78,15 @@
               <th align="left" style ="background-color: #b85311;">Monto Peso</th>
               <th align="left" style ="background-color: #b85311;">Código</th>
             </tr>
-            <tr style="height:20px"> <!-- Iterar esta fila con los valores-->
-                <td>numero</td>
-                <td>DD/MM/AAAA</td>
-                <td>DD/MM/AAAA</td>
-                <td>$NNN.NNN</td>
-                <td>NNNNNNNNNNNN</td>
+            {% for index in vars %}
+            <tr style="height:20px" style="background-color: #7e9ab1"> <!-- Iterar esta fila con los valores-->
+                <td>1</td>
+                <td>{{ print.index.fecha_cobro }}</td>
+                <td>{{ index.fecha_pago }}</td>
+                <td>{{ index.valor }}</td>
+                <td>{{ index.codigo }}</td>
             </tr>
+            {% endfor %}
     </table>
 
 </html>
