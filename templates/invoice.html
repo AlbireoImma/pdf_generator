@@ -9,6 +9,8 @@
         time_trans -> Hora de la transaccion
         num_orden -> Numero de la orden
         name_bank -> Nombre del banco
+        monto -> Monto de la boleta
+        today -> Fecha de Hoy
         coutas -> lista con las coutas (cada couta como un diccionario donde)
             couta.fecha_cobro
             couta.fecha_pago
@@ -68,7 +70,7 @@
             </th>
         </tr>
     </table>
-    <p>Con fecha <b>DD/MM/AAAA</b> hemos procedido a realizar una transacción en Banco <b>XXXXXXXXXXXXXXXXXX</b> que alcanza un total de <b>$NNN.NNN</b> por concepto de la siguiente cuota:</p>
+    <p>Con fecha <b>{{ today }}</b> hemos procedido a realizar una transacción en Banco <b>{{ name_bank }}</b> que alcanza un total de <b>{{ monto }}</b> por concepto de la siguiente cuota:</p>
     <br><br>
     <table style="width:100%">
             <tr style="height:20px">
@@ -79,12 +81,12 @@
               <th align="left" style ="background-color: #b85311;">Código</th>
             </tr>
             {% for index in vars %}
-            <tr style="height:20px" style="background-color: #7e9ab1"> <!-- Iterar esta fila con los valores-->
-                <td>1</td>
-                <td>{{ print.index.fecha_cobro }}</td>
-                <td>{{ index.fecha_pago }}</td>
-                <td>{{ index.valor }}</td>
-                <td>{{ index.codigo }}</td>
+            <tr style="height:20px"> <!-- Iterar esta fila con los valores-->
+                <td style="background-color: #7e9ab1">1</td>
+                <td style="background-color: #7e9ab1">{{ index.fecha_cobro }}</td>
+                <td style="background-color: #7e9ab1">{{ index.fecha_pago }}</td>
+                <td style="background-color: #7e9ab1">{{ index.valor }}</td>
+                <td style="background-color: #7e9ab1">{{ index.codigo }}</td>
             </tr>
             {% endfor %}
     </table>

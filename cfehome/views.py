@@ -37,6 +37,8 @@ class GeneratePDF(View):
             "time_trans": "12:34",
             "num_orden": "12345678900000",
             "name_bank": "XXXXXXXXXXXXXXXXX",
+            "monto": "$123.456",
+            "today": "12/12/1234",
             "vars": cuotas
         }
         html = template.render(context)
