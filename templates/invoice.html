@@ -12,10 +12,12 @@
         monto -> Monto de la boleta
         today -> Fecha de Hoy
         coutas -> lista con las coutas (cada couta como un diccionario donde)
+            coutas.numero
             couta.fecha_cobro
             couta.fecha_pago
             couta.valor
             couta.codigo
+        https://previews.123rf.com/images/nalinn/nalinn1508/nalinn150800018/44272522-red-grunge-approved-rubber-stamp-isolated-on-white-background.jpg
 -->
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
@@ -35,6 +37,11 @@
       <tr>
         <th align="left">Nombre Cliente</th>
         <th align="left" style="font-weight: normal" colspan="3">: {{ name }}</th>
+        <th colspan="1" rowspan="7">
+                <a href="https://www.masfondos.cl" style="text-align: center">
+                    <img src="https://previews.123rf.com/images/nalinn/nalinn1508/nalinn150800018/44272522-red-grunge-approved-rubber-stamp-isolated-on-white-background.jpg" alt="W3Schools.com" style="width:250px;height:250px; opacity:0.5;">
+                </a>
+        </th>
       </tr>
       <tr>
         <td style="font-weight: bold">RUT Cliente</td>
@@ -74,19 +81,19 @@
     <br><br>
     <table style="width:100%">
             <tr style="height:20px">
-              <th align="left" style ="background-color: #b85311;">Nro</th>
-              <th align="left" style ="background-color: #b85311;">Fecha Cobro</th>
-              <th align="left" style ="background-color: #b85311;">Fecha Pago</th>
-              <th align="left" style ="background-color: #b85311;">Monto Peso</th>
-              <th align="left" style ="background-color: #b85311;">Código</th>
+              <th align="left" style ="background-color: #b85311; border: 1px solid black;">Nro</th>
+              <th align="left" style ="background-color: #b85311; border: 1px solid black;">Fecha Cobro</th>
+              <th align="left" style ="background-color: #b85311; border: 1px solid black;">Fecha Pago</th>
+              <th align="left" style ="background-color: #b85311; border: 1px solid black;">Monto Peso</th>
+              <th align="left" style ="background-color: #b85311; border: 1px solid black;">Código</th>
             </tr>
-            {% for index in vars %}
+            {% for index in vars.values %}
             <tr style="height:20px"> <!-- Iterar esta fila con los valores-->
-                <td style="background-color: #7e9ab1">1</td>
-                <td style="background-color: #7e9ab1">{{ index.fecha_cobro }}</td>
-                <td style="background-color: #7e9ab1">{{ index.fecha_pago }}</td>
-                <td style="background-color: #7e9ab1">{{ index.valor }}</td>
-                <td style="background-color: #7e9ab1">{{ index.codigo }}</td>
+                <td style="border: 1px solid black;">{{ index.numero }}</td>
+                <td style="border: 1px solid black;">{{ index.fecha_cobro }}</td>
+                <td style="border: 1px solid black;">{{ index.fecha_pago }}</td>
+                <td style="border: 1px solid black;">{{ index.valor }}</td>
+                <td style="border: 1px solid black;">{{ index.codigo }}</td>
             </tr>
             {% endfor %}
     </table>
