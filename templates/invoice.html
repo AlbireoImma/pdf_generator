@@ -11,6 +11,8 @@
         name_bank -> Nombre del banco
         monto -> Monto de la boleta
         today -> Fecha de Hoy
+        tipo_trans -> Credito/Debito
+        cant_cuotas -> Cantidad de cuotas [En caso de credito, para debito es 1]
         coutas -> lista con las coutas (cada couta como un diccionario donde)
             coutas.numero
             couta.fecha_cobro
@@ -37,9 +39,9 @@
       <tr>
         <th align="left">Nombre Cliente</th>
         <th align="left" style="font-weight: normal" colspan="3">: {{ name }}</th>
-        <th colspan="1" rowspan="7">
+        <th colspan="1" rowspan="9">
                 <a href="https://www.masfondos.cl" style="text-align: center">
-                    <img src="https://previews.123rf.com/images/nalinn/nalinn1508/nalinn150800018/44272522-red-grunge-approved-rubber-stamp-isolated-on-white-background.jpg" alt="W3Schools.com" style="width:250px;height:250px; opacity:0.5;">
+                    <img src="https://i.imgur.com/xMYabXA.jpg" alt="W3Schools.com" style="width:275px;height:275px; opacity:0.5;">
                 </a>
         </th>
       </tr>
@@ -66,6 +68,14 @@
       <tr>
         <td style="font-weight: bold">Nombre de Banco</td>
         <td colspan="3">: {{ name_bank }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Tipo de Transacción</td>
+        <td colspan="3">: {{ tipo_trans }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Cantidad de cuotas</td>
+        <td colspan="3">: {{ cant_cuotas }}</td>
       </tr>
     </table>
     <br>
