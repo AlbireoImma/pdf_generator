@@ -51,11 +51,11 @@
       </tr>
       <tr>
         <td style="font-weight: bold">Fecha Documento</td>
-        <td colspan="3">: {{ doc_date }}</td>
+        <td colspan="3">: {{ fecha_doc }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Numero Contrato</td>
-        <td colspan="3">: {{ num_contrato }}</td>
+        <td colspan="3">: {{ num_cont }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Hora Transacción</td>
@@ -70,8 +70,12 @@
         <td colspan="3">: {{ name_bank }}</td>
       </tr>
       <tr>
+        <td style="font-weight: bold">Numero de Tarjeta</td>
+        <td colspan="3">: {{ nro_tarjeta }}</td>
+      </tr>
+      <tr>
         <td style="font-weight: bold">Tipo de Transacción</td>
-        <td colspan="3">: {{ tipo_trans }}</td>
+        <td colspan="3">: {{ tipo_pago }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Cantidad de cuotas</td>
@@ -87,7 +91,7 @@
             </th>
         </tr>
     </table>
-    <p>Con fecha <b>{{ today }}</b> hemos procedido a realizar una transacción en Banco <b>{{ name_bank }}</b> que alcanza un total de <b>{{ monto }}</b> por concepto de la siguiente cuota:</p>
+    <p>Con fecha <b>{{ fecha_doc }}</b> hemos procedido a realizar una transacción en Banco <b>{{ name_bank }}</b> que alcanza un total de <b>{{ monto_total }}</b> por concepto de la siguiente cuota:</p>
     <br><br>
     <table style="width:100%">
             <tr style="height:20px">
@@ -97,13 +101,13 @@
               <th align="left" style ="background-color: #b85311; border: 1px solid black;">Monto Peso</th>
               <th align="left" style ="background-color: #b85311; border: 1px solid black;">Código</th>
             </tr>
-            {% for index in vars.values %}
+            {% for index in dict_cuotas.values %}
             <tr style="height:20px"> <!-- Iterar esta fila con los valores-->
-                <td style="border: 1px solid black;">{{ index.numero }}</td>
-                <td style="border: 1px solid black;">{{ index.fecha_cobro }}</td>
-                <td style="border: 1px solid black;">{{ index.fecha_pago }}</td>
-                <td style="border: 1px solid black;">{{ index.valor }}</td>
-                <td style="border: 1px solid black;">{{ index.codigo }}</td>
+                <td style="border: 1px solid black;">{{ index.nro }}</td>
+                <td style="border: 1px solid black;">{{ index.fecha_cuota }}</td>
+                <td style="border: 1px solid black;">{{ fecha_doc }}</td>
+                <td style="border: 1px solid black;">{{ index.monto }}</td>
+                <td style="border: 1px solid black;">{{ index.cuota_id }}</td>
             </tr>
             {% endfor %}
     </table>

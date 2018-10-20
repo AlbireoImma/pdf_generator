@@ -290,7 +290,6 @@ class ContratosPagos(models.Model):
     class Meta:
         managed = False
         db_table = 'contratos_pagos'
-
 class FormaPagos(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.CharField(unique=True, max_length=50)
@@ -419,7 +418,7 @@ class DetalleOrden(models.Model):
 
 
 class OrdenCompra(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id =models.IntegerField(primary_key=True)
     cliente_id = models.IntegerField()
     contrato_id = models.IntegerField()
     fecha_orden = models.DateTimeField()
@@ -436,7 +435,7 @@ class OrdenCompra(models.Model):
     # Field name made lowercase.
     vci = models.CharField(db_column='VCI', max_length=10)
     fecha_transaccion = models.DateTimeField(blank=True, null=True)
-
+    token = models.CharField(max_length=64)
     class Meta:
         managed = False
         db_table = 'orden_compra'
