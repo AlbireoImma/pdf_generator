@@ -51,7 +51,7 @@
       </tr>
       <tr>
         <td style="font-weight: bold">Fecha Documento</td>
-        <td colspan="3">: {{ fecha_doc }}</td>
+        <td colspan="3">: {{ doc_date }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">Numero Contrato</td>
@@ -101,7 +101,7 @@
               <th align="left" style ="background-color: #b85311; border: 1px solid black;">Monto Peso</th>
               <th align="left" style ="background-color: #b85311; border: 1px solid black;">Código</th>
             </tr>
-            {% for index in dict_cuotas.values %}
+            {% for index in vars.values %}
             <tr style="height:20px"> <!-- Iterar esta fila con los valores-->
                 <td style="border: 1px solid black;">{{ index.nro }}</td>
                 <td style="border: 1px solid black;">{{ index.fecha_cuota }}</td>
